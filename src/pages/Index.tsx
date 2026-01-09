@@ -150,7 +150,7 @@ const Index = () => {
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <Tabs value={activeTab} onValueChange={setActiveTab} className="min-h-screen bg-background pb-20">
       <header className="sticky top-0 z-50 bg-white border-b shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between mb-4">
@@ -172,7 +172,7 @@ const Index = () => {
                     )}
                   </Button>
                 </SheetTrigger>
-                <SheetContent className="w-full sm:max-w-lg">
+                <SheetContent className="w-full sm:max-w-lg" side="right">
                   <SheetHeader>
                     <SheetTitle>Корзина</SheetTitle>
                   </SheetHeader>
@@ -239,8 +239,7 @@ const Index = () => {
         </div>
       </header>
 
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4">
           <TabsContent value="home" className="mt-6 space-y-6">
             <div className="grid gap-4">
               {promos.map(promo => (
@@ -357,24 +356,23 @@ const Index = () => {
               </div>
             </Card>
           </TabsContent>
-        </div>
+      </div>
 
-        <TabsList className="fixed bottom-0 left-0 right-0 h-16 rounded-none border-t bg-white grid grid-cols-3">
-          <TabsTrigger value="home" className="flex flex-col gap-1">
-            <Icon name="Home" className="h-5 w-5" />
-            <span className="text-xs">Главная</span>
-          </TabsTrigger>
-          <TabsTrigger value="catalog" className="flex flex-col gap-1">
-            <Icon name="Grid3x3" className="h-5 w-5" />
-            <span className="text-xs">Каталог</span>
-          </TabsTrigger>
-          <TabsTrigger value="profile" className="flex flex-col gap-1">
-            <Icon name="User" className="h-5 w-5" />
-            <span className="text-xs">Профиль</span>
-          </TabsTrigger>
-        </TabsList>
-      </Tabs>
-    </div>
+      <TabsList className="fixed bottom-0 left-0 right-0 h-16 rounded-none border-t bg-white grid grid-cols-3">
+        <TabsTrigger value="home" className="flex flex-col gap-1">
+          <Icon name="Home" className="h-5 w-5" />
+          <span className="text-xs">Главная</span>
+        </TabsTrigger>
+        <TabsTrigger value="catalog" className="flex flex-col gap-1">
+          <Icon name="Grid3x3" className="h-5 w-5" />
+          <span className="text-xs">Каталог</span>
+        </TabsTrigger>
+        <TabsTrigger value="profile" className="flex flex-col gap-1">
+          <Icon name="User" className="h-5 w-5" />
+          <span className="text-xs">Профиль</span>
+        </TabsTrigger>
+      </TabsList>
+    </Tabs>
   );
 };
 
