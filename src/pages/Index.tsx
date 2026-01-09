@@ -104,7 +104,6 @@ const products: Product[] = [
 
 const promos = [
   { id: 1, title: 'Скидка 20% на смартфоны', description: 'При покупке от 2 устройств', gradient: 'from-purple-500 to-pink-500' },
-  { id: 2, title: 'Trade-in +15%', description: 'Сдай старый телефон выгодно', gradient: 'from-blue-500 to-cyan-500' },
   { id: 3, title: 'Рассрочка 0%', description: 'До 24 месяцев без переплаты', gradient: 'from-orange-500 to-red-500' },
 ];
 
@@ -154,9 +153,7 @@ const Index = () => {
       <header className="sticky top-0 z-50 bg-white border-b shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
-              О2
-            </h1>
+            <img src="https://cdn.poehali.dev/files/33333.jpg" alt="О2" className="w-12 h-12" />
             <div className="flex gap-2">
               <Button variant="ghost" size="icon">
                 <Icon name="Bell" className="h-5 w-5" />
